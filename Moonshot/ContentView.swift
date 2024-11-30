@@ -4,41 +4,25 @@
 //
 //  Created by Joshua Rosado Olivencia on 11/28/24.
 //
+// Sheets = unrelated info page
+// NavigationLink = details of the current page
+
 
 import SwiftUI
 
-struct CustomText: View{
-    var text: String
-    
-    var body: some View{
-        
-        Text(text)
-    }
-    
-    init(text: String) {
-        print("Custom Text was created \(text)")
-        self.text = text
-    }
-}
-
-// VStack will create a text all at once, when the app is showing
-// VStack takes the space needed
-
-// LazyVStack will create a text when in demand. When item is shown
-// LazyVStack takes all the space
-
-
-
 struct ContentView: View {
     var body: some View {
-        ScrollView(.horizontal){
-            LazyHStack(spacing: 10){
-                ForEach(0..<100){
-                    CustomText(text:"Item \($0)")
-                        .font(.title)
+        NavigationStack {
+            List (0..<10){ row in // rows 0-9
+                // a navigation link for each row
+                NavigationLink("Row \(row)"){
+                    // inside the link show Text
+                    Text("Details \(row)")
                 }
             }
+            
         }
+        .navigationTitle("SwiftUI")
     }
 }
 
