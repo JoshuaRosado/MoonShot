@@ -7,24 +7,38 @@
 
 import SwiftUI
 
+struct CustomText: View{
+    var text: String
+    
+    var body: some View{
+        
+        Text(text)
+    }
+    
+    init(text: String) {
+        print("Custom Text was created \(text)")
+        self.text = text
+    }
+}
+
+// VStack will create a text all at once, when the app is showing
+// VStack takes the space needed
+
+// LazyVStack will create a text when in demand. When item is shown
+// LazyVStack takes all the space
+
+
+
 struct ContentView: View {
     var body: some View {
-//        Image("example")
-        Image(.example)
-            .resizable() // resize the image
-            .scaledToFit() // scaled to FIT the parent
-            .scaledToFill() // scaled to FILL parent
-            
-        // make this image 80% of the available width
-            .containerRelativeFrame(.horizontal){
-                size, axis in size * 0.8
+        ScrollView(.horizontal){
+            LazyHStack(spacing: 10){
+                ForEach(0..<100){
+                    CustomText(text:"Item \($0)")
+                        .font(.title)
+                }
             }
-        
-        // make this image 90% of the available height
-            .containerRelativeFrame(.vertical){
-                size, axis in size * 0.9
-            }
-
+        }
     }
 }
 
