@@ -7,47 +7,62 @@
 
 import SwiftUI
 
-struct User : Codable {
-    let name: String
-    let address: Address
-}
-
-struct Address : Codable {
-    let street: String
-    let city: String
-}
-
-
-struct ContentView: View {
+struct Horizontal: View {
+    
+    // GridItem adapts to the space, giving it a minimum and a maximum
+    let layout = [
+        GridItem(.adaptive(minimum: 80, maximum: 120))
+    ]
     var body: some View {
-        Button("Decode JSON"){
-            print("Hello")
-            
-            // Input JSON dictionary
-            let input = """
-                        { "name": "Taylor Swift",
-                        "address": { 
-                        "street": "555 Taylor Swift Avenue", "city": "Nashville"
-                        }
-                        }
-
-                        """
-            
-            // data from the dictionary
-            let data = Data(input.utf8)
-            // decoder
-            let decoder = JSONDecoder()
-            
-            
-            // try to decode User from dictionary data.
-            if let user = try? decoder.decode(User.self, from: data) {
-                //if so display user's address
-                print(user.address)
+        ScrollView(.horizontal){ // specify .horizontal
+            LazyHGrid(rows: layout){ // Horizontal = Rows
+                ForEach(0..<1000){
+                    Text("Item \($0)")
+                }
             }
         }
-        
     }
 }
+
+struct Vertical: View {
+
+let layout = [
+    GridItem(.adaptive(minimum: 80, maximum: 120))
+]
+    var body: some View {
+        ScrollView{ // Vertical does not need to be specified
+            LazyVGrid(columns: layout){ // Vertical = Columns
+                ForEach(0..<1000){
+                    Text("Item \($0)")
+                }
+            }
+        }
+    }
+    
+}
+
+struct ContentView: View {
+    var body: some View{
+        NavigationStack{
+            HStack(spacing: 50){
+                NavigationLink("Horizontal"){
+                    Horizontal()
+                    
+                }
+                
+                
+                NavigationLink("Vertical"){
+                    Vertical()
+                    
+                }
+                .navigationTitle("Direction")
+            }
+            .font(.title)
+            
+        }
+    }
+}
+
 
 #Preview {
     ContentView()
