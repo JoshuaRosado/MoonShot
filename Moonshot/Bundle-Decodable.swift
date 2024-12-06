@@ -19,7 +19,16 @@ extension Bundle {
     // func named decode
     // takes SOME file of String
     // returns a Dictionary of String from Astronaut Struct
-    func decode(_ file: String) -> [String: Astronaut]{
+    
+    // <T> = Type of something
+    // PLACEHOLDER for the TYPE you want to work with
+    // MUST BE CODABLE
+    
+    
+    // CREATING A PLACE HOLDER to be able to use different types and not just a hard coded one
+    
+    
+    func decode<T: Codable>(_ file: String) -> T {
         
         // STEP 1
         // try to find the URL from the file
@@ -58,7 +67,7 @@ extension Bundle {
             
         do {
             //STEP 1
-            return try decoder.decode([String:Astronaut].self, from: data)
+            return try decoder.decode(T.self, from: data)
             
             //STEP 2
             // ERROR 1 **
