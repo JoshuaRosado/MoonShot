@@ -12,9 +12,41 @@ struct ContentView: View {
     
     let missions : [Mission] = Bundle.main.decode("missions.json")
     
+    // create an ARRAY of adaptive columns with GridItem
+    // with a minimum but no max so it can expands more if its needed
+    let columns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
+    
     var body: some View {
-        Text(String(astronauts["schirra"]?.name ?? "Nothing"))
-        Text(String(astronauts.count))
+        NavigationStack{
+            ScrollView{
+                LazyVGrid(columns: columns){
+                    ForEach(missions) { mission in
+                        NavigationLink{
+                            Text("Detail View")
+                        } label: {
+                            VStack{
+                                Image(mission.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:100, height:100)
+                                
+                                VStack{
+                                    Text(mission.displayName)
+                                    
+                                    Text(mission.launchDate ?? "N/A")
+                                        .font(.caption)
+                                    
+                                }
+                                .frame(width: .infinity)
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
     }
 }
 
