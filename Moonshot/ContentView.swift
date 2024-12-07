@@ -11,9 +11,7 @@ struct ContentView: View {
     let astronauts : [String: Astronaut] = Bundle.main.decode("astronauts.json")
     
     let missions : [Mission] = Bundle.main.decode("missions.json")
-    
-    // create an ARRAY of adaptive columns with GridItem
-    // with a minimum but no max so it can expands more if its needed
+  
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
@@ -24,7 +22,7 @@ struct ContentView: View {
                 LazyVGrid(columns: columns){
                     ForEach(missions) { mission in
                         NavigationLink{
-                            Text("Detail View")
+                            Text("\(mission.displayName) Detail View")
                         } label: {
                             VStack{
                                 Image(mission.image)
@@ -60,7 +58,7 @@ struct ContentView: View {
             }
             .navigationTitle("Moonshot")
             .background(.darkBackground)
-            // Telling SwiftUI you want a prefer colorScheme
+
             .preferredColorScheme(.dark)
         }
     }

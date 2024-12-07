@@ -7,8 +7,6 @@
 
 import Foundation
 
-// making a struct using the properties inside the JSON Dictionary
-
 struct Astronaut: Codable, Identifiable {
     let id : String
     let name : String

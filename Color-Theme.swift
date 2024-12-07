@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-// Extend ShapeStyle BUT ONLY where we are using Color
 
 extension ShapeStyle where Self == Color {
     
-    static var darkBackground: Color { // sending back a color
+    static var darkBackground: Color {
         Color(red: 0.1, green: 0.1, blue: 0.2)
     }
     
