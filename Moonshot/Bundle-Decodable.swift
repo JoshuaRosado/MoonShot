@@ -47,6 +47,10 @@ extension Bundle {
         // decode the data from JSON file
         
         let decoder = JSONDecoder()
+        // decode date formatter to customize the date format
+        let formatter = DateFormatter()
+        formatter.dateFormat = "y-MM-dd"
+        decoder.dateDecodingStrategy = .formatted(formatter)
         
         // Do BLOCK
         

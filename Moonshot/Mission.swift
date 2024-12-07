@@ -21,7 +21,7 @@ struct Mission: Codable, Identifiable {
     let id : Int
     // NOT EVERY DICTIONARY HAS launchDate
     // We MIGHT have one, We MIGHT not.  USE OPTIONAL
-    let launchDate: String?
+    let launchDate: Date?
     let crew: [CrewRole]
     let description: String
     
@@ -33,5 +33,10 @@ struct Mission: Codable, Identifiable {
     
     var image: String {
         "apollo\(id)"
+    }
+    
+    var formattedLaunchDate: String {
+        // if there's a launchDate return a formatted date ELSE "N/A"
+        launchDate?.formatted(date: .abbreviated, time: .omitted) ?? "N/A"
     }
 }
