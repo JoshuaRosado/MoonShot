@@ -33,6 +33,10 @@ struct MissionView: View {
                         // Using Parent width and multiplying
                         width, axis in width * 0.6
                     }
+                    .padding(.vertical)
+                
+                Text(mission.formattedLaunchDateLong)
+                    
                 
                 
                 VStack(alignment: .leading){
