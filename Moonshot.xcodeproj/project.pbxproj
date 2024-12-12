@@ -11,8 +11,7 @@
 		A25EB5122D0516320093B939 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EB5112D0516320093B939 /* MissionView.swift */; };
 		A25EB5142D076DF30093B939 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EB5132D076DF30093B939 /* AstronautView.swift */; };
 		A25EB5162D08E9AD0093B939 /* CrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EB5152D08E9AD0093B939 /* CrewView.swift */; };
-		A25EB51A2D0B69670093B939 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EB5192D0B69670093B939 /* ListView.swift */; };
-		A25EB51C2D0B69800093B939 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EB51B2D0B69800093B939 /* GridView.swift */; };
+		A25EB51C2D0B69800093B939 /* ItemsToDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25EB51B2D0B69800093B939 /* ItemsToDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +39,7 @@
 		A25EB5112D0516320093B939 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		A25EB5132D076DF30093B939 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 		A25EB5152D08E9AD0093B939 /* CrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewView.swift; sourceTree = "<group>"; };
-		A25EB5192D0B69670093B939 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
-		A25EB51B2D0B69800093B939 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		A25EB51B2D0B69800093B939 /* ItemsToDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsToDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -90,8 +88,7 @@
 		A25EB4CB2CF974910093B939 = {
 			isa = PBXGroup;
 			children = (
-				A25EB5192D0B69670093B939 /* ListView.swift */,
-				A25EB51B2D0B69800093B939 /* GridView.swift */,
+				A25EB51B2D0B69800093B939 /* ItemsToDisplay.swift */,
 				A25EB5132D076DF30093B939 /* AstronautView.swift */,
 				A25EB5112D0516320093B939 /* MissionView.swift */,
 				A25EB5152D08E9AD0093B939 /* CrewView.swift */,
@@ -261,8 +258,7 @@
 				A25EB5162D08E9AD0093B939 /* CrewView.swift in Sources */,
 				A25EB5142D076DF30093B939 /* AstronautView.swift in Sources */,
 				A25EB5102D0510C40093B939 /* Color-Theme.swift in Sources */,
-				A25EB51A2D0B69670093B939 /* ListView.swift in Sources */,
-				A25EB51C2D0B69800093B939 /* GridView.swift in Sources */,
+				A25EB51C2D0B69800093B939 /* ItemsToDisplay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
