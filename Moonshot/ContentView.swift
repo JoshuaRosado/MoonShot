@@ -52,12 +52,17 @@ struct ContentView: View {
                             isShowingList.toggle()
                         }
                     }
+                    .padding(.trailing, 15)
+                    .foregroundStyle(.secondary)
                 } else {
                     Button("Columns"){
                         withAnimation{
+                            
                             isShowingList.toggle()
                         }
                     }
+                    .padding(.trailing, 15)
+                    .foregroundStyle(.secondary)
                 }
                 
                 
