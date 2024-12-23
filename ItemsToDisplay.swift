@@ -16,9 +16,10 @@ struct ItemsToDisplay: View {
 
     var body: some View {
         ForEach(missions) { mission in
-            NavigationLink{
+            NavigationLink(value: mission){
                 MissionView(mission: mission, astronauts: astronauts )
-            } label: {
+            }
+            .navigationDestination(for: Mission.self) {mission in
                 VStack{
                     Image(mission.image)
                         .resizable()
@@ -45,7 +46,6 @@ struct ItemsToDisplay: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(.lightBackground)
                 )
-                
             }
         }
     }

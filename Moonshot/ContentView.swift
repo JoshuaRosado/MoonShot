@@ -31,7 +31,7 @@ struct ContentView: View {
                     }
                     .padding([.horizontal, .bottom])
                 }
-                
+              
                     else {
                             ItemsToDisplay()
                         

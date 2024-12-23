@@ -8,15 +8,15 @@
 import Foundation
 
 
-struct Mission: Codable, Identifiable {
+struct Mission: Hashable, Codable, Identifiable {
     
 
-    struct CrewRole: Codable {
+    struct CrewRole: Hashable, Codable {
         let name: String
         let role: String
         
     }
-    let id : Int
+    var id = UUID()
 
     let launchDate: Date?
     let crew: [CrewRole]
