@@ -16,7 +16,7 @@ struct Mission: Hashable, Codable, Identifiable {
         let role: String
         
     }
-    var id = UUID()
+    let id : Int
 
     let launchDate: Date?
     let crew: [CrewRole]
